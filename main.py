@@ -9,7 +9,7 @@ client = None  # Start uden en forbundet client
 
 # Finder tilgængelige COM-porte
 def list_serial_ports():
-    ports = serial.tools.list_ports.comports()
+    ports = serial.tools.list_ports.comports(include_links=True)
     return [port.device for port in ports]
 
 # Opret forbindelse til ATV320
